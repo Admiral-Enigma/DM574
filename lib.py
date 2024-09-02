@@ -41,4 +41,16 @@ def double_factorial(n: int) -> int:
             return double_factorial(n - 1) * (n + 1)
         else:
             # Is odd return normal factorial
-            return double_factorial(n -1) * n
+            return double_factorial(n - 1) * n
+
+# 2.6 Write a function logarithm(n: int) -> int that returns the integer base-2 logarithm of n.
+def logarithm(n: int) -> int:
+    if n <= 0:
+        raise ValueError("Input must be a positive integer")
+
+    result = 0
+    while n > 1:
+        n //= 2
+        result += 1
+
+    return result

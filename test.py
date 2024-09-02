@@ -23,10 +23,10 @@ class Test(unittest.TestCase):
       self.assertEqual(factorial(7), 5040, "Factorial works")
 
     def test_double_factorial(self):
-          self.assertEqual(double_factorial(11), 10395, "double factorial works")
-          self.assertEqual(double_factorial(0), 1, "double factorial works")
-          self.assertEqual(double_factorial(7), 105, "Double factorial works")
-          self.assertEqual(double_factorial(15), 2027025, "Double factorial works")
+      self.assertEqual(double_factorial(11), 10395, "double factorial works")
+      self.assertEqual(double_factorial(0), 1, "double factorial works")
+      self.assertEqual(double_factorial(7), 105, "Double factorial works")
+      self.assertEqual(double_factorial(15), 2027025, "Double factorial works")
 
 
 
