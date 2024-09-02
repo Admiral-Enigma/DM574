@@ -30,3 +30,15 @@ def factorial(n: int) ->int:
         return 1
     else:
         return factorial(n - 1) * n
+
+# 2.5 Write a function double_factorial(n: int) -> int that returns n!!
+def double_factorial(n: int) -> int:
+    if n == 0:
+        return 1
+    else:
+        if n % 2 == 0:
+            # Is even
+            return double_factorial(n - 1) * (n + 1)
+        else:
+            # Is odd return normal factorial
+            return double_factorial(n -1) * n

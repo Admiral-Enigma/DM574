@@ -1,6 +1,5 @@
 import unittest
-
-from lib import sum_up_to, sum_even, sum_between, factorial
+from lib import *
 
 def main():
     unittest.main()
@@ -22,6 +21,12 @@ class Test(unittest.TestCase):
       self.assertEqual(factorial(11), 39916800, "Factorial works")
       self.assertEqual(factorial(0), 1, "Factorial works")
       self.assertEqual(factorial(7), 5040, "Factorial works")
+
+    def test_double_factorial(self):
+          self.assertEqual(double_factorial(11), 10395, "double factorial works")
+          self.assertEqual(double_factorial(0), 1, "double factorial works")
+          self.assertEqual(double_factorial(7), 105, "Double factorial works")
+          self.assertEqual(double_factorial(15), 2027025, "Double factorial works")
 
 
 
