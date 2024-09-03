@@ -33,15 +33,11 @@ def factorial(n: int) ->int:
 
 # 2.5 Write a function double_factorial(n: int) -> int that returns n!!
 def double_factorial(n: int) -> int:
-    if n == 0:
+    if n <= 1:
         return 1
-    else:
-        if n % 2 == 0:
-            # Is even
-            return double_factorial(n - 1) * (n + 1)
-        else:
-            # Is odd return normal factorial
-            return double_factorial(n - 1) * n
+
+    return double_factorial(n - 2) * n
+
 
 # 2.6 Write a function logarithm(n: int) -> int that returns the integer base-2 logarithm of n.
 def logarithm(n: int) -> int:
