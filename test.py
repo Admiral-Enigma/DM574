@@ -28,6 +28,19 @@ class Test(unittest.TestCase):
       self.assertEqual(double_factorial(7), 105, "Double factorial works")
       self.assertEqual(double_factorial(15), 2027025, "Double factorial works")
 
+    def test_gcd(self):
+        self.assertEqual(gcd(2,4), 2, "GCD works")
+
+    #def test_multiples(self):
+        #print_multiples()
+        #print_multiples_general(10, 100)
+
+    def test_divisors(self):
+        self.assertEqual(count_divisors(12), 6)
+        self.assertEqual(count_divisors(14), 4)
+        self.assertEqual(count_divisors(17), 2)
+        self.assertEqual(count_divisors(25), 3)
+        self.assertEqual(count_divisors(24), 8)
 
 
 if __name__ == "__main__":

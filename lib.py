@@ -50,3 +50,49 @@ def logarithm(n: int) -> int:
         result += 1
 
     return result
+
+# 2.7 GCD
+def gcd(m: int, n: int) -> int:
+    """
+    Returns greates common divisor
+    >>> gcd(2,4)
+    2
+    """
+    if m == n:
+        return m
+
+    if m < n:
+        return gcd(m, n - m)
+    else:
+        return gcd(m - n, n)
+
+# 2.10
+def print_multiples() -> None:
+    """
+    Prints multiples of 7 up to but not including 500
+    """
+    print_multiples_general(7, 500)
+
+
+def print_multiples_general(k: int = 7, n: int = 500) -> None:
+    """
+    Prints multiples of k up to but not including n
+    """
+    def _print_multiples(c: int) -> None:
+        if c * k < n:
+            print(c * k)
+            return _print_multiples(c + 1)
+
+    return _print_multiples(1)
+
+# 2.11
+def count_divisors(n: int) -> int:
+    def _count_divisors(c: int) ->int:
+        if c == 1:
+            return 1
+        elif n % c == 0:
+            return _count_divisors(c - 1) + 1
+        else:
+            return _count_divisors(c - 1)
+
+    return _count_divisors(n)
