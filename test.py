@@ -43,6 +43,14 @@ class Test(unittest.TestCase):
         self.assertEqual(count_divisors(24), 8)
         self.assertEqual(count_divisors(10), 4)
 
+    def test_count(self):
+        test = [2, 2, "fisk", "kage", 4, 69, 2]
+        self.assertEqual(count(2, test), 3)
+
+    def test_subset(self):
+      w = [2, 2, "fisk", "kage", 4, 69, 2]
+      self.assertEqual(subset([2, "fisk"], w), True)
+
 
 if __name__ == "__main__":
     unittest.main()

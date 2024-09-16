@@ -99,3 +99,34 @@ def count_divisors(n: int) -> int:
             return _count_divisors(c - 1)
 
     return _count_divisors(n)
+
+
+# 3.2
+def count(x:any, v: list) -> int:
+    """
+    Count the number of occurences of X in list V
+    """
+    if v == []:
+        return 0
+
+    test = v.pop()
+
+    if test == x:
+        return count(x, v) + 1
+    else:
+        return count(x, v)
+
+# 3.4
+def subset(v: list, w: list) -> bool:
+    """
+    Yapper yapper docstring
+    """
+    if v == []:
+        return True
+
+    test = v.pop()
+    if count(test, w.copy()) == 0:
+        return False
+    else:
+        return subset(v, w)
+
