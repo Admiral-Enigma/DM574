@@ -41,6 +41,7 @@ class Test(unittest.TestCase):
         self.assertEqual(count_divisors(17), 2)
         self.assertEqual(count_divisors(25), 3)
         self.assertEqual(count_divisors(24), 8)
+        self.assertEqual(count_divisors(10), 4)
 
 
 if __name__ == "__main__":

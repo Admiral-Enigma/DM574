@@ -87,6 +87,9 @@ def print_multiples_general(k: int = 7, n: int = 500) -> None:
 
 # 2.11
 def count_divisors(n: int) -> int:
+    """
+    Counts the number of divisors of n
+    """
     def _count_divisors(c: int) ->int:
         if c == 1:
             return 1
