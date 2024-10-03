@@ -5,7 +5,7 @@ from timestamp import (
     skip,
     equals as time_equals,
     copy as time_copy,
-    to_string as time_to_string
+    to_string as time_to_string,
 )
 
 DAYS_PER_MONTH = 365 // 12
@@ -78,9 +78,12 @@ def copy(d: Date) -> Date:
 
 def to_string(d: Date) -> str:
     """Returns a string representation of a date"""
-    return f'{d.year}-{d.month + 1}-{d.day + 1} {time_to_string(d.time)}'
+    return f"{d.year}-{d.month + 1}-{d.day + 1} {time_to_string(d.time)}"
 
 
 if __name__ == "__main__":
     d = make_date(2001, 10, 12, make_timestamp(12, 33))
+    print(to_string(d))
+    skip_month(d)
+    skip_month(d)
     print(to_string(d))
