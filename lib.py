@@ -5,6 +5,7 @@ def sum_up_to(n: int) -> int:
     else:
         return sum_up_to(n - 1) + n
 
+
 # 2.2
 def sum_even(n: int) -> int:
     if n == 0:
@@ -17,19 +18,22 @@ def sum_even(n: int) -> int:
             # Is odd so skip
             return sum_even(n - 1)
 
+
 # 2.3 Write a function sum_between(m: int, n: int) -> int that returns the sum of the numbers between m and n.
 def sum_between(m: int, n: int) -> int:
     if n == m:
         return m
     else:
-        return sum_between(m, n-1) + n
+        return sum_between(m, n - 1) + n
+
 
 # 2.4 Write a function factorial(n: int) -> int that returns the factorial of n.
-def factorial(n: int) ->int:
+def factorial(n: int) -> int:
     if n == 0:
         return 1
     else:
         return factorial(n - 1) * n
+
 
 # 2.5 Write a function double_factorial(n: int) -> int that returns n!!
 def double_factorial(n: int) -> int:
@@ -51,6 +55,7 @@ def logarithm(n: int) -> int:
 
     return result
 
+
 # 2.7 GCD
 def gcd(m: int, n: int) -> int:
     """
@@ -66,6 +71,7 @@ def gcd(m: int, n: int) -> int:
     else:
         return gcd(m - n, n)
 
+
 # 2.10
 def print_multiples() -> None:
     """
@@ -78,6 +84,7 @@ def print_multiples_general(k: int = 7, n: int = 500) -> None:
     """
     Prints multiples of k up to but not including n
     """
+
     def _print_multiples(c: int) -> None:
         if c * k < n:
             print(c * k)
@@ -85,12 +92,14 @@ def print_multiples_general(k: int = 7, n: int = 500) -> None:
 
     return _print_multiples(1)
 
+
 # 2.11
 def count_divisors(n: int) -> int:
     """
     Counts the number of divisors of n
     """
-    def _count_divisors(c: int) ->int:
+
+    def _count_divisors(c: int) -> int:
         if c == 1:
             return 1
         elif n % c == 0:
@@ -102,7 +111,7 @@ def count_divisors(n: int) -> int:
 
 
 # 3.2
-def count(x:any, v: list) -> int:
+def count(x: any, v: list) -> int:
     """
     Count the number of occurences of X in list V
     """
@@ -115,6 +124,7 @@ def count(x:any, v: list) -> int:
         return count(x, v) + 1
     else:
         return count(x, v)
+
 
 # 3.4
 def subset(v: list, w: list) -> bool:
@@ -129,7 +139,3 @@ def subset(v: list, w: list) -> bool:
         return False
     else:
         return subset(v, w)
-
-
-
-
