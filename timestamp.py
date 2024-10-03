@@ -25,6 +25,7 @@ def skip_second(t: TimeStamp) -> None:
     t.seconds += 1
 
 def skip_minute(t: TimeStamp) -> None:
+  """Skip minute"""
   if (t.minutes + 1) % 60 == 0:
     # We need to increment hours
     skip_hour(t)
@@ -32,6 +33,7 @@ def skip_minute(t: TimeStamp) -> None:
     t.minutes += 1
 
 def skip_hour(t: TimeStamp) -> None:
+  """Skip hour"""
   if (t.hours + 1) % 24 == 0:
     # A day has passed
     t.hours = 0
@@ -67,22 +69,20 @@ if __name__ == "__main__":
   ts = make_timestamp()
   for i in range(24 * 60 * 60):
       skip_second(ts)
-      print(ts.hours, ts.minutes, ts.seconds)
+      print(to_string(ts))
   print("---------------------")
   ts1 = make_timestamp(20, 1, 0)
-  print(ts1.hours, ts1.minutes, ts1.seconds)
+  print(to_string(ts1))
   ts2 = make_timestamp(5, 0, 0)
-  print(ts2.hours, ts2.minutes, ts2.seconds)
+  print(to_string(ts2))
 
   skip(ts1, ts2)
-  print(ts1.hours, ts1.minutes, ts1.seconds)
-
+  print(to_string(ts1))
 
   print("---------------------")
   ts1 = make_timestamp(0, 30, 59)
-  print(ts1.hours, ts1.minutes, ts1.seconds)
+  print(to_string(ts1))
   ts2 = make_timestamp(0, 30, 59)
-  print(ts2.hours, ts2.minutes, ts2.seconds)
-
+  print(to_string(ts2))
   skip(ts1, ts2)
-  print(ts1.hours, ts1.minutes, ts1.seconds)
+  print(to_string(ts1))
