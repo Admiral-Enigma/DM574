@@ -32,6 +32,7 @@ def skip_second(t: TimeStamp) -> None:
     if (t.seconds + 1) % 60 == 0:
         # We need to increment minutes
         skip_minute(t)
+        t.seconds = 0
     else:
         t.seconds += 1
 
@@ -41,6 +42,7 @@ def skip_minute(t: TimeStamp) -> None:
     if (t.minutes + 1) % 60 == 0:
         # We need to increment hours
         skip_hour(t)
+        t.minutes = 0
     else:
         t.minutes += 1
 
@@ -50,6 +52,8 @@ def skip_hour(t: TimeStamp) -> None:
     if (t.hours + 1) % 24 == 0:
         # A day has passed
         t.hours = 0
+        t.minutes = 0
+        t.seconds = 0
     else:
         t.hours += 1
 
@@ -81,7 +85,7 @@ def copy(t: TimeStamp) -> TimeStamp:
 
 def to_string(t: TimeStamp) -> str:
     """Returns a timestamp as a string representation"""
-    return f"{t.hours}:{t.minutes}:{t.seconds}"
+    return f"{t.hours}:{t.minutes}:{str(t.seconds).zfill(2)}"
 
 
 if __name__ == "__main__":
